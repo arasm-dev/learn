@@ -6,6 +6,5 @@ import reactor.core.publisher.Flux;
 
 public interface AccountRepository extends ReactiveCrudRepository<Account, Long> {
 
-    @Query("SELECT * FROM ACCOUNT WHERE CUSTOMER_ID = $1")
-    Flux<Account> findByCustomer_id(Long customerId);
+    
 }

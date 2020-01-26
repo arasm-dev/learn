@@ -16,8 +16,8 @@ public class AccountCustomQueryRepository {
 
     public Mono<Account> getCustomerAccount(Long customerId){
 
-        String sql = "SELECT * FROM ACCOUNT WHERE CUSTOMER_ID="+customerId;
-        return this.databaseClient.execute(sql).as(Account.class).fetch().first();
+
+        return this.databaseClient.execute(QueryTemplate.customerAccount(customerId)).as(Account.class).fetch().first();
     }
 
     public Flux<AccountsView> getCustomerAccountsView(Long customerId){

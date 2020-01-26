@@ -20,4 +20,8 @@ public class QueryTemplate {
                 " AND  A.ID="+accountId;
     }
 
+    public static String customerAccount(Long customerId){
+        return "SELECT * FROM ACCOUNT WHERE CUSTOMER_ID="+customerId;
+    }
+
 }
